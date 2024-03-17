@@ -57,16 +57,22 @@ class Program
         }
     }
 
-    static string GetLocalIPAddress()
+   public static string GetLocalIPAddress()
+{
+    string localIP = "";
+    foreach (var netInterface in NetworkInterface.GetAllNetworkInterfaces())
     {
-        var host = Dns.GetHostEntry(Dns.GetHostName());
-        foreach (var ip in host.AddressList)
+        if (netInterface.NetworkInterfaceType == NetworkInterfaceType.Wireless80211 &&
+            netInterface.OperationalStatus == OperationalStatus.Up)
         {
-            if (ip.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
+            foreach (var addrInfo in netInterface.GetIPProperties().UnicastAddresses)
             {
-                return ip.ToString();
+                if (addrInfo.Address.AddressFamily == AddressFamily.InterNetwork)
+                {
+                    localIP = addrInfo.Address.ToString();
+                }
             }
         }
-        return "No IP Address Found";
     }
+    return localIP;
 }
