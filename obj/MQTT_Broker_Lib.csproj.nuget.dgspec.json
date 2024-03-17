@@ -39,6 +39,28 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "DotNetty.Codecs.Mqtt": {
+              "target": "Package",
+              "version": "[0.7.5, )"
+            },
+            "MQTTnet": {
+              "target": "Package",
+              "version": "[3.0.16, )"
+            },
+            "MQTTnet.Extensions.ManagedClient": {
+              "target": "Package",
+              "version": "[3.0.16, )"
+            },
+            "Serilog": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "Serilog.Sinks.Console": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

@@ -1,8 +1,26 @@
 {
   "version": 2,
-  "dgSpecHash": "hnO3JQsxpWpy9Lg5mXen0rhBANZrqhMf5AtwLpObMcMZOkBCuypCMBFqP4ntaj1eUJdUY7TGYcPZXsGnMMl2fw==",
+  "dgSpecHash": "JnNTvzV9XLILnUmkmGDia6HvSpl7hUqE02scEJImITo8tFX0phwcm8k9pc+9IbpKeKdL7r0nMUaUgCE0weV1sw==",
   "success": true,
   "projectFilePath": "C:\\Users\\VANSHIKA\\Desktop\\coding_world\\Internship\\MQTT_Broker_Lib\\MQTT_Broker_Lib.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\VANSHIKA\\.nuget\\packages\\dotnetty.buffers\\0.7.5\\dotnetty.buffers.0.7.5.nupkg.sha512",
+    "C:\\Users\\VANSHIKA\\.nuget\\packages\\dotnetty.codecs\\0.7.5\\dotnetty.codecs.0.7.5.nupkg.sha512",
+    "C:\\Users\\VANSHIKA\\.nuget\\packages\\dotnetty.codecs.mqtt\\0.7.5\\dotnetty.codecs.mqtt.0.7.5.nupkg.sha512",
+    "C:\\Users\\VANSHIKA\\.nuget\\packages\\dotnetty.common\\0.7.5\\dotnetty.common.0.7.5.nupkg.sha512",
+    "C:\\Users\\VANSHIKA\\.nuget\\packages\\dotnetty.transport\\0.7.5\\dotnetty.transport.0.7.5.nupkg.sha512",
+    "C:\\Users\\VANSHIKA\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\5.0.0\\microsoft.extensions.dependencyinjection.5.0.0.nupkg.sha512",
+    "C:\\Users\\VANSHIKA\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\5.0.0\\microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\VANSHIKA\\.nuget\\packages\\microsoft.extensions.logging\\5.0.0\\microsoft.extensions.logging.5.0.0.nupkg.sha512",
+    "C:\\Users\\VANSHIKA\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\5.0.0\\microsoft.extensions.logging.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\VANSHIKA\\.nuget\\packages\\microsoft.extensions.options\\5.0.0\\microsoft.extensions.options.5.0.0.nupkg.sha512",
+    "C:\\Users\\VANSHIKA\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.0\\microsoft.extensions.primitives.5.0.0.nupkg.sha512",
+    "C:\\Users\\VANSHIKA\\.nuget\\packages\\mqttnet\\3.0.16\\mqttnet.3.0.16.nupkg.sha512",
+    "C:\\Users\\VANSHIKA\\.nuget\\packages\\mqttnet.extensions.managedclient\\3.0.16\\mqttnet.extensions.managedclient.3.0.16.nupkg.sha512",
+    "C:\\Users\\VANSHIKA\\.nuget\\packages\\serilog\\3.1.1\\serilog.3.1.1.nupkg.sha512",
+    "C:\\Users\\VANSHIKA\\.nuget\\packages\\serilog.sinks.console\\5.0.1\\serilog.sinks.console.5.0.1.nupkg.sha512",
+    "C:\\Users\\VANSHIKA\\.nuget\\packages\\system.collections.immutable\\1.5.0\\system.collections.immutable.1.5.0.nupkg.sha512",
+    "C:\\Users\\VANSHIKA\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\5.0.0\\system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
