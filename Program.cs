@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Net;
+using System.Net.NetworkInformation;
+using System.Net.Sockets;
 using System.Threading.Tasks;
 using MQTTnet;
 using MQTTnet.Server;
@@ -21,6 +23,22 @@ class Program
             {
                 // Accept all connections
                 c.ReasonCode = MQTTnet.Protocol.MqttConnectReasonCode.Success;
+
+                // Extract and print the client's IPv4 address
+                // Extract and print the client's IPv4 address
+                var clientIpAddress = "Unknown";
+                if (!string.IsNullOrEmpty(c.Endpoint))
+                {
+                    var parts = c.Endpoint.Split(':');
+                    if (parts.Length == 2 && IPAddress.TryParse(parts[0], out var ipAddress) && int.TryParse(parts[1], out var port))
+                    {
+                        var endPoint = new IPEndPoint(ipAddress, port);
+                        clientIpAddress = endPoint.Address.ToString();
+                    }
+                }
+                Console.WriteLine($"Client connected from IPv4 address: {clientIpAddress}");
+
+
             })
             .WithApplicationMessageInterceptor(context =>
             {
@@ -57,16 +75,23 @@ class Program
         }
     }
 
-    static string GetLocalIPAddress()
+    public static string GetLocalIPAddress()
     {
-        var host = Dns.GetHostEntry(Dns.GetHostName());
-        foreach (var ip in host.AddressList)
+        string localIP = "";
+        foreach (var netInterface in NetworkInterface.GetAllNetworkInterfaces())
         {
-            if (ip.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
+            if (netInterface.NetworkInterfaceType == NetworkInterfaceType.Wireless80211 &&
+                netInterface.OperationalStatus == OperationalStatus.Up)
             {
-                return ip.ToString();
+                foreach (var addrInfo in netInterface.GetIPProperties().UnicastAddresses)
+                {
+                    if (addrInfo.Address.AddressFamily == AddressFamily.InterNetwork)
+                    {
+                        localIP = addrInfo.Address.ToString();
+                    }
+                }
             }
         }
-        return "No IP Address Found";
+        return localIP;
     }
 }
